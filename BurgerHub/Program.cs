@@ -1,4 +1,4 @@
-namespace BurgerHub
+namespace BurgerHub.BurgerHub
 {
     internal static class Program
     {

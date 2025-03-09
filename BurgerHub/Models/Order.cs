@@ -1,4 +1,4 @@
-﻿namespace BurgerHub
+﻿namespace BurgerHub.BurgerHub.Models
 {
     public class Order
     {

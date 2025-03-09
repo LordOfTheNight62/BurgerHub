@@ -1,4 +1,6 @@
-﻿namespace BurgerHub
+﻿using BurgerHub.BurgerHub.Models;
+
+namespace BurgerHub.BurgerHub.Services
 {
     public class BurgerOrderService
     {

@@ -1,4 +1,5 @@
-﻿public enum OrderStatus
+﻿namespace BurgerHub.BurgerHub;
+public enum OrderStatus
 {
     Pending,
     InProgress,

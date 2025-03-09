@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
+using BurgerHub.BurgerHub.Models;
+using BurgerHub.BurgerHub.Services;
 
 namespace BurgerHub
 {
@@ -16,7 +18,7 @@ namespace BurgerHub
 
         private void InitializeBurgerHubComponents()
         {
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BurgerList.json");
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BurgerHub", "Data", "BurgerList.json");
             if (File.Exists(path))
             {
                 var json = File.ReadAllText(path);
