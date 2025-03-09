@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
+using BurgerHub.BurgerHub.Forms;
 using BurgerHub.BurgerHub.Models;
 using BurgerHub.BurgerHub.Services;
 
@@ -70,14 +71,36 @@ namespace BurgerHub
 
         private void BtnCancelActiveOrder_Click(object sender, EventArgs e)
         {
-            _order = new Order();
-            UpdateUI();
+            DialogResult result = MessageBox.Show("Do you want to cancel this Order?", "Cancel Order", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                _order = new Order();
+                UpdateUI();
+            }
+
         }
 
         private void BtnShowAllOrdersForm_Click(object sender, EventArgs e)
         {
             AllOrdersForm allOrdersForm = new AllOrdersForm(_burgerOrderService);
             allOrdersForm.ShowDialog();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to exit?", "Exit", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
         }
     }
 }

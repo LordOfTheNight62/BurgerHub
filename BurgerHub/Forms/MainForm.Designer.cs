@@ -37,16 +37,20 @@
             BtnShowAllOrdersForm = new Button();
             LabelTotalPrice = new Label();
             BtnCancelActiveOrder = new Button();
+            menuStrip1 = new MenuStrip();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // ListViewActiveOrders
             // 
             ListViewActiveOrders.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            ListViewActiveOrders.Location = new Point(15, 15);
+            ListViewActiveOrders.Location = new Point(15, 32);
             ListViewActiveOrders.Margin = new Padding(4);
             ListViewActiveOrders.Name = "ListViewActiveOrders";
-            ListViewActiveOrders.Size = new Size(655, 810);
+            ListViewActiveOrders.Size = new Size(655, 793);
             ListViewActiveOrders.TabIndex = 0;
             ListViewActiveOrders.UseCompatibleStateImageBehavior = false;
             // 
@@ -79,7 +83,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(901, 12);
+            pictureBox1.Location = new Point(902, 32);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(540, 461);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -102,7 +106,7 @@
             // 
             BtnShowAllOrdersForm.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             BtnShowAllOrdersForm.BackColor = Color.Gold;
-            BtnShowAllOrdersForm.Location = new Point(901, 479);
+            BtnShowAllOrdersForm.Location = new Point(902, 499);
             BtnShowAllOrdersForm.Name = "BtnShowAllOrdersForm";
             BtnShowAllOrdersForm.Size = new Size(540, 50);
             BtnShowAllOrdersForm.TabIndex = 5;
@@ -127,13 +131,38 @@
             BtnCancelActiveOrder.Enabled = false;
             BtnCancelActiveOrder.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnCancelActiveOrder.ForeColor = Color.White;
-            BtnCancelActiveOrder.Location = new Point(677, 15);
+            BtnCancelActiveOrder.Location = new Point(677, 31);
             BtnCancelActiveOrder.Name = "BtnCancelActiveOrder";
             BtnCancelActiveOrder.Size = new Size(77, 43);
             BtnCancelActiveOrder.TabIndex = 7;
             BtnCancelActiveOrder.Text = "Cancel";
             BtnCancelActiveOrder.UseVisualStyleBackColor = false;
             BtnCancelActiveOrder.Click += BtnCancelActiveOrder_Click;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = Color.Gold;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { helpToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1578, 28);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(55, 24);
+            helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(224, 26);
+            aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -148,16 +177,21 @@
             Controls.Add(BtnCreateOrder);
             Controls.Add(DropdownBurger);
             Controls.Add(ListViewActiveOrders);
+            Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(4);
             MinimumSize = new Size(1596, 888);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Create Order - BurgerHub";
             WindowState = FormWindowState.Maximized;
+            FormClosing += MainForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -172,5 +206,8 @@
         private Button BtnShowAllOrdersForm;
         private Label LabelTotalPrice;
         private Button BtnCancelActiveOrder;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
