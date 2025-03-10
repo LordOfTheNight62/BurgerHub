@@ -13,9 +13,9 @@ namespace BurgerHub
 {
     public partial class AllOrdersForm : Form
     {
-        private BurgerOrderService _burgerOrderService;
+        private OrderService _burgerOrderService;
 
-        public AllOrdersForm(BurgerOrderService burgerOrderService)
+        public AllOrdersForm(OrderService burgerOrderService)
         {
             InitializeComponent();
             _burgerOrderService = burgerOrderService;

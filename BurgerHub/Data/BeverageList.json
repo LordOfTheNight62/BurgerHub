@@ -1,0 +1,14 @@
+[
+    {
+        "Name": "Water",
+        "Price": 10
+    },
+    {
+        "Name": "Coke",
+        "Price": 24.99
+    },
+    {
+        "Name": "Fruit Juice",
+        "Price": 19.99
+    }
+]

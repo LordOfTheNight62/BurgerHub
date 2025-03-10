@@ -66,7 +66,7 @@
             label2.Name = "label2";
             label2.Size = new Size(59, 25);
             label2.TabIndex = 2;
-            label2.Text = "v0.0.1";
+            label2.Text = "v0.0.2";
             // 
             // pictureBox1
             // 
